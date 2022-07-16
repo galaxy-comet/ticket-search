@@ -3,7 +3,7 @@ import Search from './pages/Search'
 
 function App() {
     return (
-        <div className="App bg-lightblue">
+        <div className="App bg-lightblueW">
             <Search />
         </div>
     )

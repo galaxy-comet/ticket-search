@@ -11,9 +11,12 @@ module.exports = {
             orange: '#FF0700',
         },
         fontSize: {
+            vssm: ['12px', '14px'],
             vsm: ['14px', '16px'],
             sm: ['15px', '17px'],
-            base: ['16px', '20px'],
+            base: ['16px', '18px'],
+            lg_2: ['17px', '19px'],
+            lg_1: ['18px', '20px'],
             lg: ['20px', '22px'],
             xl: ['24px', '26px'],
         },
