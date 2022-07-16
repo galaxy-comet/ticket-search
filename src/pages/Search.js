@@ -8,8 +8,10 @@ import phone3 from '../assets/img/phone3.png'
 import phone4 from '../assets/img/phone4.png'
 
 function Search() {
-    const [selected, setSelected] = useState(2)
+    const [selected, setSelected] = useState(0)
     const [flag, setFlag] = useState(false)
+    const [search, setSearch] = useState('')
+
     useEffect(() => {
         const setImgshow = () => {
             return window.innerWidth < 1140 ? setFlag(false) : setFlag(true)
@@ -18,6 +20,23 @@ function Search() {
         setImgshow()
         window.addEventListener('resize', () => setImgshow())
     })
+
+    const onChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const onClick = () => {
+        if (!search) {
+            alert('please input')
+            return
+        }
+        console.log('submit')
+    }
+
+    const onCheck = (e) => {
+        console.log(e)
+    }
+
     return (
         <div className="lg:px-40 md:px-40 sm:px-10 px-5 pb-28">
             <div className="pt-12">
@@ -51,6 +70,8 @@ function Search() {
                                 className="border-solid border-2 rounded-md border-blue w-full lg:text-xl 
                                 md:text-lg sm:text-lg text-base lg:px-8 lg:py-6 md:px-8 md:py-6 sm:px-6 sm:py-4 px-6 py-3"
                                 placeholder="Please input..."
+                                value={search}
+                                onChange={onChange}
                             />
                         </div>
                     </div>
@@ -59,6 +80,7 @@ function Search() {
                             className="bg-blue border-solid border-2 rounded-md border-blue 
                                 text-white text-center font-bold w-full lg:py-6 md:py-6 sm:py-4 py-3 lg:text-xl 
                                 md:text-lg sm:text-lg text-base"
+                            onClick={onClick}
                         >
                             Search
                         </button>
@@ -96,7 +118,14 @@ function Search() {
                 </div>
 
                 <div className="flex justify-between rounded-md bg-gray px-7 py-4 my-4">
-                    <input type="checkbox" className="default:ring-2" />
+                    <input
+                        type="checkbox"
+                        className="default:ring-2"
+                        id="checkbox"
+                        name="checkbox"
+                        value="Bike"
+                        onChange={onCheck}
+                    />
                     <p className="flex items-center w-11/12 lg:text-lg md:text-lg_1 sm:text-lg text-base lg:mr-10 md:mr-2 sm:mr-2 ml-2">
                         Tiktok advertisement change the way people see their
                         products.
